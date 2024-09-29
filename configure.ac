@@ -114,6 +114,13 @@ AC_ARG_WITH(sim,
 	[with_sim=qemu]
 	)
 
+AC_ARG_WITH(languages,
+        [AS_HELP_STRING([--with-languages=c,c++,fortran],
+                [Sets the target languages, defaults to c,c++,fortran])],
+        [],
+        [with_languages=c,c++,fortran]
+        ) 
+
 AS_IF([test "x$with_abi" = xdefault],
 	[AS_CASE([$with_arch],
 		[*rv64g* | *rv64*d*], [with_abi=lp64d],
@@ -131,6 +138,7 @@ AC_SUBST(WITH_ABI, --with-abi=$with_abi)
 AC_SUBST(WITH_TUNE, --with-tune=$with_tune)
 AC_SUBST(WITH_ISA_SPEC, --with-isa-spec=$with_isa_spec)
 AC_SUBST(WITH_SIM, $with_sim)
+AC_SUBST(WITH_LANGUAGES, $with_languages)
 
 AC_ARG_ENABLE(multilib,
 	[AS_HELP_STRING([--enable-multilib],
