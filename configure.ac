@@ -115,10 +115,9 @@ AC_ARG_WITH(sim,
 	)
 
 AC_ARG_WITH(languages,
-        [AS_HELP_STRING([--with-languages=c,c++,fortran],
-                [Sets the target languages, defaults to c,c++,fortran])],
-        [],
-        [with_languages=c,c++,fortran]
+        [AS_HELP_STRING([--with-languages=],
+                [Sets the target languages, defaults to c,c++ for bare mental or c,c++,fortran for others])],
+        []
         ) 
 
 AS_IF([test "x$with_abi" = xdefault],
