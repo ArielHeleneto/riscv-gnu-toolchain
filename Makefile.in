@@ -47,7 +47,7 @@ ENABLE_LIBSANITIZER ?= @enable_libsanitizer@
 QEMU_TARGETS ?= @qemu_targets@
 
 ENABLED_LANGUAGES ?= @WITH_LANGUAGES@
-ifeq ($(ENABLED_LANGUAGES),$(sgy))
+ifeq ($(ENABLED_LANGUAGES),)
 	undefine ENABLED_LANGUAGES
 endif
 
@@ -1399,4 +1399,3 @@ Makefile: $(srcdir)/Makefile.in config.status
 
 config.status: $(srcdir)/configure
 	CONFIG_SHELL="$(SHELL)" $(SHELL) ./config.status --recheck
-
