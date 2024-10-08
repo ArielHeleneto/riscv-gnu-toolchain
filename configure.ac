@@ -116,7 +116,7 @@ AC_ARG_WITH(sim,
 
 AC_ARG_WITH(languages,
         [AS_HELP_STRING([--with-languages=],
-                [Sets the target languages, defaults to c,c++ for bare mental or c,c++,fortran for others])],
+                [Sets the enabled languages for toolchain, defaults to c,c++,fortran for Linux/native and Linux/glibc or c,c++ for Bare-metal, Linux/musl and Linux/uClibc])],
         []
         ) 
 
